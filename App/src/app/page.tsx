@@ -2,7 +2,8 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <main className="pt-8 pl-8">
-        <h1 className="text-4xl font-bold mb-8">Thirty Degrees</h1>
+        <h1 className="text-4xl font-bold mb-2">Thirty Degrees</h1>
+        <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">An overview of apps developed by Damian and Robin</p>
 
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md mx-auto">
           <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">
