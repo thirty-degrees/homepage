@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import ThirtyDegreesTextBg from "../components/ThirtyDegreesTextBg";
 import Projects from "../components/Projects";
@@ -8,7 +8,7 @@ import PrivacyPolicy from "../components/PrivacyPolicy";
 import TitleSection from "../components/TitleSection";
 import MobileWorkInProgress from "../components/MobileWorkInProgress";
 
-export default function Home() {
+function HomeContent() {
   const [activeSection, setActiveSection] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollAccumulator, setScrollAccumulator] = useState(0);
@@ -144,5 +144,19 @@ export default function Home() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-black flex items-center justify-center">
+          <div className="text-white text-xl">Loading...</div>
+        </div>
+      }
+    >
+      <HomeContent />
+    </Suspense>
   );
 }
