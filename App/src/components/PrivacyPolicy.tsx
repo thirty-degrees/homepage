@@ -1,8 +1,8 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="w-full h-full bg-pink-500 flex flex-col items-center justify-center p-6">
+    <div className="w-full h-full flex flex-col items-start justify-center p-6">
       <h2 className="text-white text-4xl font-bold mb-6">PRIVACY POLICY</h2>
-      <div className="text-white text-lg max-w-2xl text-center">
+      <div className="text-white text-lg max-w-2xl text-left">
         <p className="mb-4">
           We respect your privacy and are committed to protecting your personal
           data. This privacy policy explains how we collect, use, and safeguard
@@ -14,7 +14,8 @@ export default function PrivacyPolicy() {
         </p>
         <p>
           For any questions about this privacy policy, please contact us at
-          privacy@thirtydegrees.com
+          <br />
+          <strong>privacy@thirty-degrees.com</strong>
         </p>
       </div>
     </div>

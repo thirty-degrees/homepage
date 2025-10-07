@@ -1,29 +1,24 @@
+import ProjectCard, { Project, PlaceholderProjectCard } from "./ProjectCard";
+
 export default function Projects() {
+  const projects: Project[] = [
+    {
+      name: "Party Battle",
+      imageUrl: "/party-battle-icon.png",
+      devs: ["Robin", "Damian"],
+      hoursInvested: 120,
+      githubLink: "https://github.com/thirty-degrees/party-battle",
+      liveAppLink: "https://party-battle.thirty-degrees.ch",
+    },
+  ];
+
   return (
-    <div className="flex flex-col space-y-4 bg-blue-400 w-full h-full p-6">
-      <h2 className="text-2xl font-bold text-white mb-4">Our Projects</h2>
-      <div className="w-full h-16 bg-white rounded p-4 flex items-center space-x-4">
-        <div className="w-16 h-16 bg-red-500 rounded flex-shrink-0"></div>
-        <div className="flex-1">
-          <h3 className="text-lg font-semibold text-black">Project Alpha</h3>
-          <p className="text-sm text-gray-600">
-            A revolutionary software solution
-          </p>
-        </div>
-      </div>
-      <div className="w-full h-16 bg-white rounded p-4 flex items-center space-x-4">
-        <div className="w-16 h-16 bg-green-500 rounded flex-shrink-0"></div>
-        <div className="flex-1">
-          <h3 className="text-lg font-semibold text-black">Project Beta</h3>
-          <p className="text-sm text-gray-600">An innovative web application</p>
-        </div>
-      </div>
-      <div className="w-full h-16 bg-white rounded p-4 flex items-center space-x-4">
-        <div className="w-16 h-16 bg-purple-500 rounded flex-shrink-0"></div>
-        <div className="flex-1">
-          <h3 className="text-lg font-semibold text-black">Project Gamma</h3>
-          <p className="text-sm text-gray-600">A cutting-edge mobile app</p>
-        </div>
+    <div className="w-full h-full p-8 overflow-x-auto">
+      <div className="flex flex-row space-x-4 min-w-max h-full">
+        <ProjectCard project={projects[0]} />
+        <PlaceholderProjectCard opacity="opacity-15" />
+        <PlaceholderProjectCard opacity="opacity-10" />
+        <PlaceholderProjectCard opacity="opacity-5" />
       </div>
     </div>
   );

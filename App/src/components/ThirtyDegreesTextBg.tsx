@@ -35,7 +35,7 @@ const ThirtyDegreesTextBg: React.FC<TrianglesProps> = ({
             y="${patternHeight / 2}" 
             text-anchor="middle" 
             dominant-baseline="middle" 
-            font-family="Arial, sans-serif" 
+            font-family="Space Mono, monospace" 
             font-size="${triangleSize * 0.3}" 
             fill="${borderColor}"
           >
@@ -93,7 +93,7 @@ const ThirtyDegreesTextBg: React.FC<TrianglesProps> = ({
   return (
     <div
       ref={containerRef}
-      className="w-full h-full relative overflow-hidden"
+      className="w-full h-full relative overflow-hidden bg-slate-900"
       style={{
         backgroundImage: `url("data:image/svg+xml,${encodeURIComponent(
           svgPattern

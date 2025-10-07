@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import ThirtyDegreesTextBg from "../components/ThirtyDegreesTextBg";
 import Projects from "../components/Projects";
 import PrivacyPolicy from "../components/PrivacyPolicy";
+import TitleSection from "../components/TitleSection";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState(0);
@@ -64,39 +65,41 @@ export default function Home() {
           speed={0.25}
           triangleSize={75}
           direction="diagonal"
-          borderColor="#e9ecef"
+          borderColor="#ffffff"
         />
       </div>
 
-      <main className="flex flex-col h-screen relative z-10">
-        <div className="h-[40vh] flex items-center justify-center">
-          <div className="w-1/2">
-            <h1 className="text-4xl font-bold mb-2 text-black">
-              Thirty Degrees
-            </h1>
-            <h3>A software project by damian and robin</h3>
+      <main className="flex flex-col justify-end h-screen relative z-10">
+        <div className="main-content-gradient h-[100%] flex flex-col items-center justify-end px-8">
+          <div className="flex flex-col items-start justify-center w-full h-full">
+            <TitleSection />
           </div>
-        </div>
-
-        <div className="w-full flex-1 min-h-0 pt-[10px] px-[10px] flex flex-col">
-          <div className="bg-black rounded-t-lg flex-1 min-h-0 flex items-center justify-center px-8">
-            <div className="flex flex-col space-y-4 w-1/2">
-              {sections.map((section, index) => (
-                <button
-                  key={section}
-                  onClick={() => setActiveSection(index)}
-                  className={`text-white text-2xl transition-all duration-300 text-left hover:opacity-80 ${
-                    activeSection === index ? "font-bold" : "font-semibold"
-                  }`}
-                >
-                  {section}
-                </button>
-              ))}
+          <div className="flex flex-row w-full h-[50%]">
+            <div className="flex flex-col items-start justify-start w-1/4">
+              <div className="flex flex-col gap-2 w-full h-full justify-center">
+                {sections.map((section, index) => (
+                  <div key={section} className="h-12 flex items-center">
+                    <button
+                      onClick={() => setActiveSection(index)}
+                      className={`transition-all duration-300 text-left hover:opacity-80 relative ${
+                        activeSection === index
+                          ? "text-white text-3xl scale-105"
+                          : "text-gray-400 text-2xl hover:text-gray-300"
+                      }`}
+                    >
+                      {activeSection === index && (
+                        <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-1 h-8 bg-white rounded-full"></div>
+                      )}
+                      <span className="relative z-10">{section}</span>
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div
               ref={scrollContainerRef}
-              className="w-1/2 h-full overflow-hidden"
+              className="w-3/4 h-full overflow-hidden"
             >
               <div
                 className="h-full flex flex-col transition-transform duration-500 ease-in-out"
