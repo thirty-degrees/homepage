@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import ThirtyDegreesTextBg from "../components/ThirtyDegreesTextBg";
 import Projects from "../components/Projects";
 import PrivacyPolicy from "../components/PrivacyPolicy";
@@ -11,8 +12,28 @@ export default function Home() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollAccumulator, setScrollAccumulator] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const sections = ["Projects", "Privacy Policy"];
+  const sectionNames = useMemo(() => ["projects", "privacy-policy"], []);
   const SCROLL_THRESHOLD = 200;
+
+  // Read URL on mount and set initial section
+  useEffect(() => {
+    const sectionParam = searchParams.get("section");
+    if (sectionParam) {
+      const index = sectionNames.indexOf(sectionParam);
+      if (index !== -1) {
+        setActiveSection(index);
+      }
+    }
+  }, [searchParams, sectionNames]); // Run only on mount
+
+  // Update URL when section changes
+  useEffect(() => {
+    const sectionName = sectionNames[activeSection];
+    router.push(`/?section=${sectionName}`, { scroll: false });
+  }, [activeSection, router, sectionNames]);
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {

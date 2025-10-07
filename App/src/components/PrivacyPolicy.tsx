@@ -15,7 +15,14 @@ export default function PrivacyPolicy() {
         <p>
           For any questions about this privacy policy, please contact us at
           <br />
-          <strong>privacy@thirty-degrees.com</strong>
+          <strong>
+            <a
+              href="mailto:privacy@thirty-degrees.com"
+              className="text-white hover:text-gray-300"
+            >
+              privacy@thirty-degrees.com
+            </a>
+          </strong>
         </p>
       </div>
     </div>
