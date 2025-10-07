@@ -6,6 +6,7 @@ import ThirtyDegreesTextBg from "../components/ThirtyDegreesTextBg";
 import Projects from "../components/Projects";
 import PrivacyPolicy from "../components/PrivacyPolicy";
 import TitleSection from "../components/TitleSection";
+import MobileWorkInProgress from "../components/MobileWorkInProgress";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState(0);
@@ -81,6 +82,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen relative">
+      <MobileWorkInProgress />
+
       <div className="absolute inset-0 z-0">
         <ThirtyDegreesTextBg
           speed={0.25}
