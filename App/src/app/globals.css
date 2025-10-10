@@ -141,3 +141,13 @@
 .main-content-gradient {
   background: linear-gradient(to bottom, transparent, #0a0a0a, #0a0a0a);
 }
+
+/* Hide scrollbars while maintaining scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
