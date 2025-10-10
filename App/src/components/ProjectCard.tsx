@@ -45,7 +45,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <span
             key={index}
             className={`px-2 md:px-3 py-1 rounded-full text-xs font-medium ${getDevBadgeColor(
-              dev
+              dev,
             )}`}
           >
             {dev}

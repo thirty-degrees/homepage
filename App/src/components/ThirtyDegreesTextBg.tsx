@@ -46,7 +46,7 @@ const ThirtyDegreesTextBg: React.FC<TrianglesProps> = ({
       <rect width="100%" height="100%" fill="url(#textPattern)" />
     </svg>
   `,
-    [triangleSize, triangleHeight, borderColor, patternWidth, patternHeight]
+    [triangleSize, triangleHeight, borderColor, patternWidth, patternHeight],
   );
 
   useEffect(() => {
@@ -96,7 +96,7 @@ const ThirtyDegreesTextBg: React.FC<TrianglesProps> = ({
       className="w-full h-full relative overflow-hidden bg-slate-900"
       style={{
         backgroundImage: `url("data:image/svg+xml,${encodeURIComponent(
-          svgPattern
+          svgPattern,
         )}")`,
         backgroundPosition: `${offset.x}px ${offset.y}px`,
         backgroundRepeat: "repeat",
