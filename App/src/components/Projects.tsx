@@ -9,20 +9,20 @@ export default function Projects() {
       githubLink: "https://github.com/thirty-degrees/party-battle",
       liveAppLink: "https://party-battle.thirty-degrees.ch",
     },
+    {
+      name: "Online Watermarks",
+      imageUrl: "/online-watermarks-logo.svg",
+      devs: ["Robin"],
+      githubLink: "",
+      liveAppLink: "https://onlinewatermarks.com",
+    },
   ];
 
   const projectCards = projects.map((project, index) => (
     <ProjectCard key={`project-${index}`} project={project} />
   ));
 
-  // Add placeholder cards (as much as needed. After the second project i think we can delete them)
-  const placeholderCards = [
-    <PlaceholderProjectCard key="placeholder-1" opacity="opacity-20" />,
-    <PlaceholderProjectCard key="placeholder-2" opacity="opacity-10" />,
-    <PlaceholderProjectCard key="placeholder-3" opacity="opacity-5" />,
-  ];
-
-  const allCards = [...projectCards, ...placeholderCards];
+  const allCards = [...projectCards];
 
   return (
     <div className="w-full h-full p-4 md:p-8 ">

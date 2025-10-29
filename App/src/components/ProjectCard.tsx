@@ -55,23 +55,25 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       <div className="flex flex-row gap-2 md:gap-3 mt-auto w-full">
         <a
-          href={project.githubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-1 md:gap-2 px-2 md:px-4 py-1 md:py-2 bg-gray-800 text-white rounded-lg text-xs md:text-sm font-medium"
-        >
-          <Github size={16} />
-          <span className="hidden md:inline">GitHub</span>
-        </a>
-        <a
           href={project.liveAppLink}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
           className="flex items-center justify-center gap-1 md:gap-2 px-2 md:px-4 py-1 md:py-2 bg-blue-600 text-white rounded-lg text-xs md:text-sm font-medium"
         >
           <ExternalLink size={16} />
           <span className=" md:inline">App</span>
         </a>
+        {project.githubLink && (
+          <a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-1 md:gap-2 px-2 md:px-4 py-1 md:py-2 bg-gray-800 text-white rounded-lg text-xs md:text-sm font-medium"
+          >
+            <Github size={16} />
+            <span className="hidden md:inline">GitHub</span>
+          </a>
+        )}
       </div>
     </div>
   );
